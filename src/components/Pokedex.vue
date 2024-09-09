@@ -26,7 +26,6 @@ export default
       <div class="col-6 d-flex flex-column align-items-center">
         <div class="poke-search">
           <Input></Input>
-          <Button title="Search"></Button>
         </div>
         <PokeImage></PokeImage>
         <PokeStats></PokeStats>
