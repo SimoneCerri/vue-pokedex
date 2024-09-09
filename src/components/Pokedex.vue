@@ -1,4 +1,22 @@
 <script>
+import Input from './Input.vue';
+import Button from './Button.vue';
+import PokeList from './PokeList.vue';
+import PokeImage from './PokeImage.vue';
+import PokeStats from './PokeStats.vue';
+
+export default
+  {
+    name: "Pokedex",
+    components:
+    {
+      Input,
+      Button,
+      PokeList,
+      PokeImage,
+      PokeStats
+    },
+  }
 
 </script>
 
@@ -7,31 +25,16 @@
     <div class="row justify-content-center">
       <div class="col-6 d-flex flex-column align-items-center">
         <div class="poke-search">
-          <input class="search-bar mt-3" type="text" placeholder="Who's that pokemon ?" v-model="search">
-          <button class="search-button">
-            Search
-          </button>
+          <Input></Input>
+          <Button title="Search"></Button>
         </div>
-        <div class="poke-img mt-3">
-          <img src="" alt="">
-        </div>
-        <div class="poke-stats mt-5">
-        </div>
+        <PokeImage></PokeImage>
+        <PokeStats></PokeStats>
       </div>
       <!-- /.col-6 -->
       <div class="col-6 d-flex align-items-center flex-column">
-        <button class="poke-add mt-3">
-          Catch it !
-        </button>
-        <div class="poke-captured mt-3">
-          <h1 class="text-center">
-            My Pokemon :
-          </h1>
-          <ul class="list-unstyled">
-            <li>
-            </li>
-          </ul>
-        </div>
+        <Button class="mt-3" title="Catch it !"></Button>
+        <PokeList></PokeList>
       </div>
       <!-- /.col-6 -->
     </div>
@@ -46,23 +49,5 @@
   height: 700px;
   width: 500px;
   border: 1px solid black;
-}
-
-.poke-img {
-  background-color: white;
-  height: 200px;
-  width: 80%;
-}
-
-.poke-stats {
-  background-color: green;
-  height: 350px;
-  width: 80%;
-}
-
-.poke-captured {
-  background-color: white;
-  height: 600px;
-  width: 80%;
 }
 </style>
