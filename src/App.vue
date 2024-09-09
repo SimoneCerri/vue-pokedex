@@ -1,9 +1,9 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import Pokedex from './components/Pokedex.vue'
 </script>
 
 <template>
-  Here we are, Pokedex
+  <Pokedex></Pokedex>
 </template>
 
 <style scoped></style>
