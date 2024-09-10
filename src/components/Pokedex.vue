@@ -38,8 +38,8 @@ export default
         <div class="poke-search">
           <Input @pokemon-found="pokemonFound"></Input>
         </div>
-        <PokeImage></PokeImage>
-        <PokeStats></PokeStats>
+        <PokeImage :pokemon></PokeImage>
+        <PokeStats :pokemon></PokeStats>
       </div>
       <!-- /.col-6 -->
       <div class="col-6 d-flex align-items-center flex-column">

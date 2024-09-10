@@ -42,7 +42,8 @@ export default
 </script>
 
 <template>
-    <input class="search-bar mt-3" type="text" placeholder="Who's that pokemon ?" v-model="search">
+    <input class="search-bar mt-3" type="text" placeholder="Who's that pokemon ?" @keyup.enter="onSearchClick"
+        v-model="search">
     <Button title="Search" @click="onSearchClick"></Button>
 </template>
 
