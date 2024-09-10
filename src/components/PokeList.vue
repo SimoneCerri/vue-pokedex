@@ -11,12 +11,26 @@ export default
         },
         data() {
             return {
-
+                openOption: null,
             }
         },
         methods:
         {
-
+            showOptions(index) {
+                if (this.openOption === index) {
+                    this.openOption = null;
+                } else {
+                    this.openOption = index;
+                }
+                console.log(this.openOption);
+            },
+            viewPokemon(pokemon) {
+                //emit to parent ?
+            },
+            removePokemon(index) {
+                this.myPokemons.splice(index, 1);
+                this.openOption = null;
+            },
         },
         mounted() {
 
@@ -30,8 +44,14 @@ export default
             Poke Collection
         </h1>
         <ul class="list-unstyled d-flex flex-wrap justify-content-center">
-            <li v-for="pokemon in myPokemons" :key="pokemon">
-                <img :src="pokemon.sprite" alt="">
+            <li v-for="(pokemon, index) in myPokemons" :key="index" class="position-relative">
+                <img @click="showOptions(index)" :src="pokemon.sprite" alt="">
+                <div v-if="openOption === index" class="context-menu">
+                    <ul>
+                        <li @click="viewPokemon(pokemon)">Inspect</li>
+                        <li @click="removePokemon(index)">Remove</li>
+                    </ul>
+                </div>
             </li>
         </ul>
     </div>
@@ -42,5 +62,29 @@ export default
     background-color: white;
     height: 600px;
     width: 80%;
+
+    .context-menu {
+        position: absolute;
+        background-color: white;
+        border: 1px solid #ccc;
+        padding: 10px;
+        z-index: 1000;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .context-menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .context-menu ul li {
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+
+    .context-menu ul li:hover {
+        background-color: #f0f0f0;
+    }
 }
 </style>

@@ -19,15 +19,15 @@ Per rendere il nostro Pokedex completo quindi gestiamo i Pokemon dando la possib
 
 ### Milestone
 
-**Milestone 1**
+**Milestone 1** [x]
 
 - Creiamo un componente per la ricerca: avremo bisogno di un campo di input in cui scrivere il nome del Pokemon e un pulsante per chiamare l’API. Inizialmente proviamo a vedere se i risultati sono corretti tramite un console.log (o nella tab Rete degli strumenti di chrome).
 
-**Milestone 2**
+**Milestone 2** [x]
 
 - Una volta che abbiamo i dati del nostro Pokemon, creiamo il componente per visualizzare i dettagli che arrivano tramite l’API. È sufficiente mostrare i dati principali, ad una visualizzazione più complessa ci penseremo più avanti.
 
-**Milestone 3**
+**Milestone 3** [x]
 
 - Aggiungere la possibilità tramite un pulsante di salvare il Pokemon trovato nel nostro Pokedex, mostrando la lista dei Pokemon salvati.
 
