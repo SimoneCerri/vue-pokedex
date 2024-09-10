@@ -28,7 +28,7 @@ export default
             async onSearchClick() {
                 try {
                     const pokemon = await this.callPokeApi();
-                    console.log('pokemon found');
+                    console.log('Pokemon found !');
                     this.$emit('pokemon-found', pokemon);
                 } catch (error) {
                     console.error(error);

@@ -4,7 +4,10 @@ export default
     {
         name: "PokeList",
         props: {
-            /* title: String, */
+            myPokemons:
+            {
+                type: Array
+            }
         },
         data() {
             return {
@@ -22,12 +25,13 @@ export default
 </script>
 
 <template>
-    <div class="poke-captured mt-3">
-        <h1 class="text-center">
-            My Pokemon :
+    <div class="poke-captured mt-3 text-center">
+        <h1 class="">
+            Poke Collection
         </h1>
-        <ul class="list-unstyled">
-            <li>
+        <ul class="list-unstyled d-flex flex-wrap justify-content-center">
+            <li v-for="pokemon in myPokemons" :key="pokemon">
+                <img :src="pokemon.sprite" alt="">
             </li>
         </ul>
     </div>

@@ -19,12 +19,22 @@ export default
     data() {
       return {
         pokemon: null,
+        myPokemons: [],
       }
     },
     methods:
     {
       pokemonFound(pokemon) {
         this.pokemon = pokemon;
+      },
+      catchPokemon() {
+        if (!this.myPokemons.includes(this.pokemon.name)) {
+          this.myPokemons.push({ name: this.pokemon.name, sprite: this.pokemon.sprites.front_default });
+        }
+        else {
+          console.log(`You already have ${pokemon.name} !`);
+        }
+        console.log(this.myPokemons);
       }
     }
   }
@@ -43,8 +53,8 @@ export default
       </div>
       <!-- /.col-6 -->
       <div class="col-6 d-flex align-items-center flex-column">
-        <Button class="mt-3" title="Catch it !"></Button>
-        <PokeList></PokeList>
+        <Button @click="catchPokemon" class="mt-3" title="Catch it !"></Button>
+        <PokeList :myPokemons></PokeList>
       </div>
       <!-- /.col-6 -->
     </div>
