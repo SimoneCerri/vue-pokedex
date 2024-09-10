@@ -9,29 +9,30 @@ export default
         {
             Button,
         },
-        props:
-        {
-            pokemon: Object,
-        },
         data() {
             return {
                 search: '',
-                pokemon: '',
             }
         },
         methods:
         {
-            callPokeApi() {
-                axios.get(`https://pokeapi.co/api/v2/pokemon/${this.search}`).then(response => {
+            async callPokeApi() {
+                try {
+                    const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${this.search}`);
                     console.log(response.data);
-                    if (response.data) {
-                        this.pokemon = response.data
-                    }
-                    else {
-
-                    }
+                    return response.data;
+                } catch (error) {
+                    throw new Error('Pokemon not found');
                 }
-                )
+            },
+            async onSearchClick() {
+                try {
+                    const pokemon = await this.callPokeApi();
+                    console.log('pokemon found');
+                    this.$emit('pokemon-found', pokemon);
+                } catch (error) {
+                    console.error(error);
+                }
             }
         },
         mounted() {
@@ -42,7 +43,7 @@ export default
 
 <template>
     <input class="search-bar mt-3" type="text" placeholder="Who's that pokemon ?" v-model="search">
-    <Button title="Search" @click="callPokeApi"></Button>
+    <Button title="Search" @click="onSearchClick"></Button>
 </template>
 
 <style scoped></style>

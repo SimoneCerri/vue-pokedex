@@ -16,6 +16,17 @@ export default
       PokeImage,
       PokeStats
     },
+    data() {
+      return {
+        pokemon: null,
+      }
+    },
+    methods:
+    {
+      pokemonFound(pokemon) {
+        this.pokemon = pokemon;
+      }
+    }
   }
 
 </script>
@@ -25,7 +36,7 @@ export default
     <div class="row justify-content-center">
       <div class="col-6 d-flex flex-column align-items-center">
         <div class="poke-search">
-          <Input></Input>
+          <Input @pokemon-found="pokemonFound"></Input>
         </div>
         <PokeImage></PokeImage>
         <PokeStats></PokeStats>
