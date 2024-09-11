@@ -19,7 +19,7 @@ export default
     data() {
       return {
         pokemon: null,
-        myPokemons: [],
+        myPokemons: JSON.parse(localStorage.getItem('myPokemons')) || [],
       }
     },
     methods:
@@ -28,14 +28,30 @@ export default
         this.pokemon = pokemon;
       },
       catchPokemon() {
-        if (!this.myPokemons.some(pokemon => pokemon.name === this.pokemon.name)) {
-          this.myPokemons.push({ name: this.pokemon.name, sprite: this.pokemon.sprites.front_default });
+        const savedPokemons = JSON.parse(localStorage.getItem('myPokemons')) || [];
+
+        if (!savedPokemons.some(pokemon => pokemon.name === this.pokemon.name)) {
+          const newPokemon = {
+            name: this.pokemon.name,
+            sprite: this.pokemon.sprites.front_default
+          };
+
+          savedPokemons.push(newPokemon);
+          this.myPokemons.push(newPokemon);
+
+          localStorage.setItem("myPokemons", JSON.stringify(savedPokemons));
+
+          this.myPokemons = savedPokemons;
         }
         else {
           console.log(`You already have ${pokemon.name} !`);
         }
         console.log(this.myPokemons);
-      }
+      },
+      setSelectedPokemon(pokemon) {
+        this.pokemon = pokemon;
+        //console.log(this.pokemon);
+      },
     }
   }
 
@@ -54,7 +70,7 @@ export default
       <!-- /.col-6 -->
       <div class="col-6 d-flex align-items-center flex-column">
         <Button @click="catchPokemon" class="mt-3" title="Catch it !"></Button>
-        <PokeList :myPokemons></PokeList>
+        <PokeList @selected-pokemon="setSelectedPokemon" :myPokemons></PokeList>
       </div>
       <!-- /.col-6 -->
     </div>

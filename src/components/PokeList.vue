@@ -22,13 +22,16 @@ export default
                 } else {
                     this.openOption = index;
                 }
-                console.log(this.openOption);
+                //console.log(this.openOption);
             },
             viewPokemon(pokemon) {
-                //emit to parent ?
+                this.$emit('selected-pokemon', pokemon);
+                //console.log(pokemon);
+                this.openOption = null;
             },
             removePokemon(index) {
                 this.myPokemons.splice(index, 1);
+                localStorage.setItem("myPokemons", JSON.stringify(this.myPokemons));
                 this.openOption = null;
             },
         },

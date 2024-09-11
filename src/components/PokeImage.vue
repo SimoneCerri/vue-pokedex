@@ -23,7 +23,7 @@ export default
 
 <template>
     <div class="poke-img mt-3">
-        <img v-if="pokemon" :src="pokemon.sprites.front_default" alt="">
+        <img v-if="pokemon" :src="(pokemon.sprite || pokemon.sprites.front_default)" alt="">
     </div>
 </template>
 
