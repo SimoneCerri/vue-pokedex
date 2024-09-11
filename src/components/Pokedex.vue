@@ -31,13 +31,9 @@ export default
         const savedPokemons = JSON.parse(localStorage.getItem('myPokemons')) || [];
 
         if (!savedPokemons.some(pokemon => pokemon.name === this.pokemon.name)) {
-          const newPokemon = {
-            name: this.pokemon.name,
-            sprite: this.pokemon.sprites.front_default
-          };
 
-          savedPokemons.push(newPokemon);
-          this.myPokemons.push(newPokemon);
+          savedPokemons.push(this.pokemon);
+          this.myPokemons.push(this.pokemon);
 
           localStorage.setItem("myPokemons", JSON.stringify(savedPokemons));
 

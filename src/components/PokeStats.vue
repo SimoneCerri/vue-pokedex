@@ -8,7 +8,7 @@ export default
         },
         data() {
             return {
-
+                max: 255,
             }
         },
         methods:
@@ -31,6 +31,42 @@ export default
                 <li>Weight: {{ pokemon.weight }} lbs</li>
                 <li>Height: {{ pokemon.height }} ''</li>
                 <li>Stats</li>
+                <li class="d-flex align-items-center">
+                    <span class="col-3">Hp</span>
+                    <div class="col-9">
+                        <b-progress :value="pokemon.stats[0].base_stat" :max="max" show-progress animated></b-progress>
+                    </div>
+                </li>
+                <li class="d-flex align-items-center">
+                    <span class="col-3">Attack</span>
+                    <div class="col-9">
+                        <b-progress :value="pokemon.stats[1].base_stat" :max="max" show-progress animated></b-progress>
+                    </div>
+                </li>
+                <li class="d-flex align-items-center">
+                    <span class="col-3">Defense</span>
+                    <div class="col-9">
+                        <b-progress :value="pokemon.stats[2].base_stat" :max="max" show-progress animated></b-progress>
+                    </div>
+                </li>
+                <li class="d-flex align-items-center">
+                    <span class="col-3">Sp.Attack</span>
+                    <div class="col-9">
+                        <b-progress :value="pokemon.stats[3].base_stat" :max="max" show-progress animated></b-progress>
+                    </div>
+                </li>
+                <li class="d-flex align-items-center">
+                    <span class="col-3">Sp.Defense</span>
+                    <div class="col-9">
+                        <b-progress :value="pokemon.stats[4].base_stat" :max="max" show-progress animated></b-progress>
+                    </div>
+                </li>
+                <li class="d-flex align-items-center">
+                    <span class="col-3">Speed</span>
+                    <div class="col-9">
+                        <b-progress :value="pokemon.stats[5].base_stat" :max="max" show-progress animated></b-progress>
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
