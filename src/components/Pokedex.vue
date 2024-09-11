@@ -28,7 +28,7 @@ export default
         this.pokemon = pokemon;
       },
       catchPokemon() {
-        if (!this.myPokemons.includes(this.pokemon.name)) {
+        if (!this.myPokemons.some(pokemon => pokemon.name === this.pokemon.name)) {
           this.myPokemons.push({ name: this.pokemon.name, sprite: this.pokemon.sprites.front_default });
         }
         else {
