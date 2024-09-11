@@ -36,7 +36,7 @@ export default
             },
         },
         mounted() {
-
+            //console.log(this.myPokemons);
         }
     }
 </script>
@@ -48,7 +48,7 @@ export default
         </h1>
         <ul class="list-unstyled d-flex flex-wrap justify-content-center">
             <li v-for="(pokemon, index) in myPokemons" :key="index" class="position-relative">
-                <img @click="showOptions(index)" :src="pokemon.sprite" alt="">
+                <img @click="showOptions(index)" :src="pokemon.sprites.front_default" alt="">
                 <div v-if="openOption === index" class="context-menu">
                     <ul>
                         <li @click="viewPokemon(pokemon)">Inspect</li>
@@ -63,7 +63,7 @@ export default
 <style scoped>
 .poke-captured {
     background-color: white;
-    height: 600px;
+    height: 650px;
     width: 80%;
 
     .context-menu {

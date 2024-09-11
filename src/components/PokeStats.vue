@@ -16,7 +16,9 @@ export default
 
         },
         mounted() {
-
+            /* console.log('Pokemon Stats:', this.pokemon.stats);
+            console.log('Value:', this.pokemon.stats[0].base_stat);
+            console.log('Max:', this.max); */
         }
     }
 </script>
@@ -34,37 +36,37 @@ export default
                 <li class="d-flex align-items-center">
                     <span class="col-3">Hp</span>
                     <div class="col-9">
-                        <b-progress :value="pokemon.stats[0].base_stat" :max="max" show-progress animated></b-progress>
+                        <b-progress :value="pokemon.stats[0].base_stat" :max="max" animated></b-progress>
                     </div>
                 </li>
                 <li class="d-flex align-items-center">
                     <span class="col-3">Attack</span>
                     <div class="col-9">
-                        <b-progress :value="pokemon.stats[1].base_stat" :max="max" show-progress animated></b-progress>
+                        <b-progress :value="pokemon.stats[1].base_stat" :max="max" animated></b-progress>
                     </div>
                 </li>
                 <li class="d-flex align-items-center">
                     <span class="col-3">Defense</span>
                     <div class="col-9">
-                        <b-progress :value="pokemon.stats[2].base_stat" :max="max" show-progress animated></b-progress>
+                        <b-progress :value="pokemon.stats[2].base_stat" :max="max" animated></b-progress>
                     </div>
                 </li>
                 <li class="d-flex align-items-center">
                     <span class="col-3">Sp.Attack</span>
                     <div class="col-9">
-                        <b-progress :value="pokemon.stats[3].base_stat" :max="max" show-progress animated></b-progress>
+                        <b-progress :value="pokemon.stats[3].base_stat" :max="max" animated></b-progress>
                     </div>
                 </li>
                 <li class="d-flex align-items-center">
                     <span class="col-3">Sp.Defense</span>
                     <div class="col-9">
-                        <b-progress :value="pokemon.stats[4].base_stat" :max="max" show-progress animated></b-progress>
+                        <b-progress :value="pokemon.stats[4].base_stat" :max="max" animated></b-progress>
                     </div>
                 </li>
                 <li class="d-flex align-items-center">
                     <span class="col-3">Speed</span>
                     <div class="col-9">
-                        <b-progress :value="pokemon.stats[5].base_stat" :max="max" show-progress animated></b-progress>
+                        <b-progress :value="pokemon.stats[5].base_stat" :max="max" animated></b-progress>
                     </div>
                 </li>
             </ul>
@@ -75,7 +77,7 @@ export default
 <style scoped>
 .poke-stats {
     background-color: green;
-    height: 350px;
+    height: 400px;
     width: 80%;
 }
 </style>

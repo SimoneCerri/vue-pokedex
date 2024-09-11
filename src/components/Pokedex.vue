@@ -26,8 +26,11 @@ export default
     {
       pokemonFound(pokemon) {
         this.pokemon = pokemon;
+        //console.log(pokemon.stats[0].base_stat);
       },
       catchPokemon() {
+        console.log('catch it');
+
         const savedPokemons = JSON.parse(localStorage.getItem('myPokemons')) || [];
 
         if (!savedPokemons.some(pokemon => pokemon.name === this.pokemon.name)) {
@@ -40,7 +43,7 @@ export default
           this.myPokemons = savedPokemons;
         }
         else {
-          console.log(`You already have ${pokemon.name} !`);
+          console.log(`You already have ${this.pokemon.name} !`);
         }
         console.log(this.myPokemons);
       },
@@ -48,6 +51,9 @@ export default
         this.pokemon = pokemon;
         //console.log(this.pokemon);
       },
+    },
+    mounted() {
+
     }
   }
 
@@ -78,7 +84,7 @@ export default
 <style scoped>
 .col-6 {
   background-color: red;
-  height: 700px;
+  height: 750px;
   width: 500px;
   border: 1px solid black;
 }
