@@ -29,17 +29,17 @@ Per rendere il nostro Pokedex completo quindi gestiamo i Pokemon dando la possib
 
 **Milestone 3** [x]
 
-- Aggiungere la possibilità tramite un pulsante di salvare il Pokemon trovato nel nostro Pokedex, mostrando la lista dei Pokemon salvati.
+- Aggiungere la possibilità tramite un pulsante di salvare il Pokemon trovato nel nostro Pokedex, mostrando la lista dei Pokemon salvati. 
 
-**Milestone 4**
+**Milestone 4** [x]
 
 - Diamo la possibilità di cancellare dalla lista i Pokemon salvati e di poterne visualizzare il dettaglio nel componente dedicato cliccandoci sopra.
 
-**Milestone 5**
+**Milestone 5** [x]
 
 - Per completare il nostro pokedex, gestiamo la persistenza dei Pokemon salvati attraverso il local storage, da manipolare sia in fase di aggiunta che in fase di cancellazione di un Pokemon dalla lista.
 
-**Milestone 6**
+**Milestone 6** [x]
 
 - Dall’API ci arriveranno le varie statistiche del Pokemon, proviamo a far visualizzare i valori delle varie skill sotto forma di progress bar.
 
