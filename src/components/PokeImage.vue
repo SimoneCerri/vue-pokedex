@@ -8,25 +8,42 @@ export default
         },
         data() {
             return {
-
+                showFront: true,
+                intervalId: null
             }
         },
         methods:
         {
 
         },
+        computed: {
+            currentSprite() {
+                if (this.pokemon) {
+                    return this.showFront ? this.pokemon.sprite || this.pokemon.sprites.front_default : this.pokemon.sprites.back_default;
+                }
+                return '';
+            }
+        },
         mounted() {
-
+            this.intervalId = setInterval(() => {
+                this.showFront = !this.showFront;
+            }, 2000);
+        },
+        beforeDestroy() {
+            if (this.intervalId) {
+                clearInterval(this.intervalId);
+            }
         }
-    }
+    };
 </script>
 
 <template>
     <div class="poke-img mt-3">
         <div class="circle1"></div>
         <div class="circle2"></div>
-        <img v-if="pokemon" :src="(pokemon.sprite || pokemon.sprites.front_default)" alt="">
-        <div class="circle3"></div>
+        <img v-if="pokemon" :src="currentSprite" alt="Pokemon sprite">
+        <div class=" circle3">
+        </div>
         <div class="stripes">
             <hr>
             <hr>

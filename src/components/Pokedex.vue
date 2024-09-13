@@ -85,6 +85,21 @@ export default
       <div class="col-6 pokedex-right d-flex align-items-center flex-column">
         <!-- <Button @click="catchPokemon" class="mt-3" title="Catch it !"></Button> -->
         <PokeList @selected-pokemon="setSelectedPokemon" :myPokemons></PokeList>
+        <div class="my_container mt-4">
+
+          <div class="button-container">
+            <button class="round-button"><strong>X</strong></button>
+            <button class="round-button"><strong>Y</strong></button>
+          </div>
+
+          <div class="directional-pad">
+            <div class="up d-flex align-items-center justify-content-center">&#8593;</div>
+            <div class="left d-flex align-items-center justify-content-center">&#8592;</div>
+            <div class="center d-flex align-items-center justify-content-center"></div>
+            <div class="right d-flex align-items-center justify-content-center">&#8594;</div>
+            <div class="down d-flex align-items-center justify-content-center"> &#8595;</div>
+          </div>
+        </div>
       </div>
       <!-- /.col-6 -->
     </div>
@@ -167,5 +182,70 @@ export default
   height: 760px;
   margin-top: 50px;
   clip-path: polygon(0% 0%, 36% 0%, 60% 12%, 100% 12%, 100% 100%, 0% 100%);
+}
+
+.my_container {
+  display: flex;
+  align-items: center;
+  background-color: red;
+  gap: 100px;
+}
+
+.button-container {
+  display: flex;
+  gap: 40px;
+}
+
+.round-button {
+  width: 70px;
+  height: 70px;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.round-button:hover {
+  background-color: #45a049;
+}
+
+.directional-pad {
+  display: grid;
+  grid-template-columns: 50px 50px 50px;
+  grid-template-rows: 50px 50px 50px;
+}
+
+.directional-pad div {
+  background-color: #333;
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+}
+
+.up {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.left {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.center {
+  grid-column: 2;
+  grid-row: 2;
+  background-color: #555;
+}
+
+.right {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.down {
+  grid-column: 2;
+  grid-row: 3;
 }
 </style>

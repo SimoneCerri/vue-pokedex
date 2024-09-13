@@ -43,14 +43,14 @@ Per rendere il nostro Pokedex completo quindi gestiamo i Pokemon dando la possib
 
 - Dall’API ci arriveranno le varie statistiche del Pokemon, proviamo a far visualizzare i valori delle varie skill sotto forma di progress bar.
 
-**Milestone 7**
+**Milestone 7** [x]
 
 - Aggiungiamo una veste grafica ai vari componenti del nostro Pokedex. Nell’anteprima avete un riferimento, ma potete lasciare spazio alla vostra creatività!
 
-➕ **Bonus 1**
+➕ **Bonus 1** [x]
 
 - Nel nostro componente di ricerca potremmo aver implementato un emit e una props in ingresso. Sfruttare la documentazione di Vue per simulare il v-model su un componente custom (del tipo `<SearchCustom v-model=”search” >`)
 
-➕ **Bonus 2**
+➕ **Bonus 2** [x]
 
 - L’API ci restituisce diverse immagini del Pokemon (fronte e retro). Proviamo a sfruttarle entrambe nel componente di dettaglio del Pokemon, magari implementando un’animazione per alternarle.

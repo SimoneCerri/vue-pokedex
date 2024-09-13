@@ -62,10 +62,15 @@ export default
 
 <style scoped>
 .poke-captured {
-    background-color: white;
-    height: 550px;
+    background-color: rgb(189, 181, 181);
+    height: 400px;
     width: 80%;
-    margin-top: 160px;
+    margin-top: 150px;
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    border-radius: 20px;
 
     .context-menu {
         position: absolute;
@@ -74,6 +79,7 @@ export default
         padding: 10px;
         z-index: 1000;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        border-radius: 20px;
     }
 
     .context-menu ul {
@@ -89,6 +95,7 @@ export default
 
     .context-menu ul li:hover {
         background-color: #f0f0f0;
+        border-radius: 20px;
     }
 }
 </style>
