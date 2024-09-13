@@ -72,10 +72,10 @@ export default
             <div class="s-circle3"></div>
           </div>
         </div>
-        <div class="pokedex-left">
-          <div class="poke-search d-flex align-items-center mt-3">
+        <div class="pokedex-left d-flex flex-column align-items-center">
+          <div class="poke-search d-flex">
             <Input @pokemon-found="pokemonFound"></Input>
-            <Button @click="catchPokemon" class="mt-3" title="Catch it !"></Button>
+            <Button @click="catchPokemon" class="mt-4" title="Catch it !"></Button>
           </div>
           <PokeImage :pokemon></PokeImage>
           <PokeStats :pokemon></PokeStats>
@@ -96,15 +96,37 @@ export default
 <style scoped>
 .col-6 {
   background-color: red;
-  height: 750px;
+  height: 860px;
   width: 500px;
   border: 1px solid black;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+
+  .poke-search {
+    padding-top: 80px;
+
+    input {
+      border-radius: 10px 0 0 10px;
+      outline: none;
+      border: none;
+      padding: 0.25em;
+    }
+
+    button {
+      outline: none;
+      border: none;
+      border-radius: 0 10px 10px 0;
+    }
+  }
 
   .circle {
     width: 70px;
     height: 70px;
     clip-path: circle(50% at 50% 50%);
-    background-color: blue;
+    box-shadow: inset 10px 10px 20px rgba(0, 0, 0, 0.6),
+      5px 5px 15px rgba(0, 0, 0, 0.5);
+    background: radial-gradient(circle at 30% 30%, lightblue, blue);
   }
 
   .circles {
@@ -118,33 +140,32 @@ export default
     width: 16px;
     height: 16px;
     clip-path: circle(50% at 50% 50%);
-    /* border: 1px solid black; */
   }
 
   .s-circle1 {
-    background-color: rgb(129, 21, 21);
+    background: radial-gradient(circle at 30% 30%, red, rgb(68, 5, 5));
   }
 
   .s-circle2 {
-    background-color: rgb(191, 194, 48);
+    background: radial-gradient(circle at 30% 30%, rgb(233, 233, 127), rgb(122, 122, 8));
   }
 
   .s-circle3 {
-    background-color: rgb(25, 129, 21);
+    background: radial-gradient(circle at 30% 30%, lightgreen, green);
   }
 }
 
 .pokedex-left {
-  clip-path: polygon(0% 16%, 40% 16%, 64% 0%, 100% 0%, 100% 100%, 0% 100%);
+  clip-path: polygon(0% 12%, 40% 12%, 64% 0%, 100% 0%, 100% 100%, 0% 100%);
   background-color: black;
-  height: 700px;
+  height: 760px;
   width: 500px;
   margin-top: -10.5%;
 }
 
 .pokedex-right {
-  height: 700px;
+  height: 760px;
   margin-top: 50px;
-  clip-path: polygon(0% 0%, 36% 0%, 60% 16%, 100% 16%, 100% 100%, 0% 100%);
+  clip-path: polygon(0% 0%, 36% 0%, 60% 12%, 100% 12%, 100% 100%, 0% 100%);
 }
 </style>
