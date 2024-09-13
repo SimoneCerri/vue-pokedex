@@ -19,7 +19,7 @@ export default
             async callPokeApi() {
                 try {
                     const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${this.search}`);
-                    console.log(response.data);
+                    //console.log(response.data);
                     return response.data;
                 } catch (error) {
                     throw new Error('Pokemon not found');
@@ -28,7 +28,7 @@ export default
             async onSearchClick() {
                 try {
                     const pokemon = await this.callPokeApi();
-                    console.log('Pokemon found !');
+                    //console.log('Pokemon found !');
                     this.$emit('pokemon-found', pokemon);
                 } catch (error) {
                     console.error(error);
@@ -44,7 +44,7 @@ export default
 <template>
     <input class="search-bar mt-3" type="text" placeholder="Who's that pokemon ?" @keyup.enter="onSearchClick"
         v-model="search">
-    <Button title="Search" @click="onSearchClick"></Button>
+    <!-- <Button title="Search" @click="onSearchClick"></Button> -->
 </template>
 
 <style scoped></style>

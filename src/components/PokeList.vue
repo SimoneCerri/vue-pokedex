@@ -42,10 +42,10 @@ export default
 </script>
 
 <template>
-    <div class="poke-captured mt-3 text-center">
-        <h1 class="">
+    <div class="poke-captured text-center">
+        <!-- <h1 class="">
             Poke Collection
-        </h1>
+        </h1> -->
         <ul class="list-unstyled d-flex flex-wrap justify-content-center">
             <li v-for="(pokemon, index) in myPokemons" :key="index" class="position-relative">
                 <img @click="showOptions(index)" :src="pokemon.sprites.front_default" alt="">
@@ -63,8 +63,9 @@ export default
 <style scoped>
 .poke-captured {
     background-color: white;
-    height: 650px;
+    height: 550px;
     width: 80%;
+    margin-top: 160px;
 
     .context-menu {
         position: absolute;

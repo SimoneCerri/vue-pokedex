@@ -29,7 +29,7 @@ export default
 
 <style scoped>
 .poke-img {
-    background-color: white;
+    background-color: #333;
     height: 200px;
     width: 80%;
     display: flex;

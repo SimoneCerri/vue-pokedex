@@ -76,7 +76,7 @@ export default
 
 <style scoped>
 .poke-stats {
-    background-color: green;
+    background-color: rgb(40, 184, 40);
     height: 400px;
     width: 80%;
 }
